@@ -1,0 +1,43 @@
+# Artificial Intelligence
+
+Artificial Intelligence (AI) is a field of computer science that focuses on creating machines capable of performing tasks that typically require human intelligence. These tasks include reasoning, problem-solving, understanding language, and recognizing images.
+
+# Machine Learning
+
+Machine Learning (ML) is a subset of Artificial Intelligence. It enables computers to learn patterns from data and make predictions without being explicitly programmed for every situation. Common types include supervised learning, unsupervised learning, and reinforcement learning.
+
+# Deep Learning
+
+Deep Learning is a subset of Machine Learning that uses neural networks with multiple layers. It is widely used in image recognition, natural language processing, speech recognition, and generative AI.
+
+# Retrieval-Augmented Generation (RAG)
+
+Retrieval-Augmented Generation, or RAG, is a technique that combines information retrieval with a language model. First, relevant documents are retrieved from a knowledge base. Then, the retrieved information is provided to a language model to generate a context-aware answer.
+
+# Document Loaders
+
+Document loaders in LangChain import data from different sources, such as text files, PDFs, Word documents, web pages, and other supported formats. They convert the data into Document objects that can be processed by later stages of a RAG pipeline.
+
+# Text Splitting
+
+Text splitting divides large documents into smaller chunks. Smaller chunks help a retrieval system find relevant information efficiently. Chunk size and overlap can be adjusted according to the application's requirements.
+
+# Embeddings
+
+Embeddings are numerical representations of text. They capture semantic information and allow similar pieces of text to be compared using vector similarity. Embedding models are used to convert documents and queries into vectors.
+
+# Vector Databases
+
+Vector databases store vector embeddings and associated metadata. They allow applications to search for semantically similar documents. ChromaDB is one option for storing and retrieving embeddings in a RAG application.
+
+# Mistral AI
+
+Mistral AI provides language models that can be used for text generation, summarization, and question answering. In a RAG pipeline, a Mistral model can generate answers using the relevant context retrieved from a document collection.
+
+# RAG Pipeline
+
+A typical RAG pipeline includes document loading, text splitting, embedding generation, vector database storage, query embedding, similarity search, context construction, and answer generation.
+
+# Limitations of RAG
+
+RAG quality depends on document quality, chunking strategy, embedding quality, and retrieval accuracy. If relevant information is missing from the knowledge base, the model may be unable to provide a reliable answer. Applications should instruct the model to acknowledge when the answer is not available in the supplied context.
