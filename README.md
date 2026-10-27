@@ -61,7 +61,7 @@ The included sample PDF can be used to try the project. Scanned PDFs without a t
 ### 1. Clone the repository and create an environment
 
 ```bash
-git clone https://github.com/<github-username>/rag-pdf-qa.git
+git clone https://github.com/khayati628/rag-pdf-qna
 cd rag-pdf-qa
 python -m venv .venv
 ```
