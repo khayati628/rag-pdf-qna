@@ -12,8 +12,17 @@ if not os.getenv("GOOGLE_API_KEY"):
     st.error("GOOGLE_API_KEY not found. Copy .env.example to .env and add your key.")
     st.stop()
 
-if not config.CHROMA_DIR.exists():
-    st.error("No index found. Run `python -m rag_qa.ingest` first.")
+@st.cache_resource(show_spinner="Building the index from your PDFs (first run only)...")
+def ensure_index():
+    from rag_qa.ingest import build_index
+
+    if not config.CHROMA_DIR.exists() or not any(config.CHROMA_DIR.iterdir()):
+        build_index()
+    return config.CHROMA_DIR.exists()
+
+
+if not ensure_index():
+    st.error(f"No PDFs found in `{config.DATA_DIR}`, so no index could be built.")
     st.stop()
 
 
